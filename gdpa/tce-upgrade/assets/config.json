@@ -1,0 +1,1516 @@
+{
+  "metadata": {
+    "user": "ai",
+    "retry_count": 3,
+    "read_timeout_in_ms": 3000,
+    "write_timeout_in_ms": 30000,
+    "auth_method": "jwt"
+  },
+  "component": {
+    "TCE": {
+      "SearchService": {
+        "BOE": {
+          "description": "\u641c\u7d22 TCE \u670d\u52a1 (BOE)",
+          "http_request_metadata": {
+            "method": "GET",
+            "url": "https://cloud-boe.bytedance.net/api/v1/tce/open-apis/v1/services/",
+            "querySchema": {
+              "type": "object",
+              "properties": {
+                "search": {
+                  "type": "string",
+                  "description": "\u641c\u7d22\u5173\u952e\u8bcd\uff08PSM \u6216\u670d\u52a1\u540d\uff09"
+                },
+                "repo_name": {
+                  "type": "string",
+                  "description": "\u4ed3\u5e93\u540d\u79f0"
+                },
+                "detail": {
+                  "type": "boolean",
+                  "description": "\u662f\u5426\u8fd4\u56de\u8be6\u7ec6\u4fe1\u606f",
+                  "default": true
+                },
+                "is_ppe": {
+                  "type": "boolean",
+                  "description": "\u662f\u5426\u4e3a PPE \u73af\u5883",
+                  "default": false
+                },
+                "page": {
+                  "type": "integer",
+                  "description": "\u9875\u7801",
+                  "default": 1
+                },
+                "page_size": {
+                  "type": "integer",
+                  "description": "\u6bcf\u9875\u6570\u91cf",
+                  "default": 10
+                },
+                "subs_prefer": {
+                  "type": "boolean",
+                  "description": "\u662f\u5426\u4f18\u5148\u5c55\u793a\u8ba2\u9605\u670d\u52a1",
+                  "default": true
+                }
+              },
+              "required": []
+            },
+            "headerSchema": {
+              "type": "object",
+              "properties": {
+                "x-bcgw-tenant-id": {
+                  "type": "string",
+                  "default": "bytedance",
+                  "description": "\u79df\u6237 ID"
+                },
+                "accept-language": {
+                  "type": "string",
+                  "default": "zh",
+                  "description": "\u8bed\u8a00"
+                },
+                "x-jwt-token": {
+                  "type": "string",
+                  "description": "JWT Token\uff08\u7528\u6237\u8eab\u4efd\u8ba4\u8bc1\uff09"
+                }
+              }
+            },
+            "outputSchema": {
+              "type": "object",
+              "properties": {
+                "page_info": {
+                  "type": "object",
+                  "description": "\u5206\u9875\u4fe1\u606f",
+                  "properties": {
+                    "total_count": {
+                      "type": "integer",
+                      "description": "\u603b\u6570\u91cf"
+                    },
+                    "page_num": {
+                      "type": "integer",
+                      "description": "\u5f53\u524d\u9875\u7801"
+                    },
+                    "page_size": {
+                      "type": "integer",
+                      "description": "\u6bcf\u9875\u6570\u91cf"
+                    }
+                  }
+                },
+                "data": {
+                  "type": "array",
+                  "description": "\u670d\u52a1\u5217\u8868",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "meta": {
+                        "type": "object",
+                        "description": "\u670d\u52a1\u5143\u4fe1\u606f\uff08id, psm, name, status, cluster_ids \u7b49\uff09"
+                      },
+                      "auth": {
+                        "type": "object",
+                        "description": "\u6743\u9650\u4fe1\u606f\uff08owner, iam_info, galaxy_info \u7b49\uff09"
+                      },
+                      "build": {
+                        "type": "object",
+                        "description": "\u6784\u5efa\u4fe1\u606f\uff08language, tech_stack, scm_repo_info \u7b49\uff09"
+                      },
+                      "runtime": {
+                        "type": "object",
+                        "description": "\u8fd0\u884c\u65f6\u4fe1\u606f\uff08ports, cluster_ids, latest_repo_info \u7b49\uff09"
+                      },
+                      "upgrade": {
+                        "type": "object",
+                        "description": "\u5347\u7ea7\u4fe1\u606f\uff08update_rely, upgrade_url\uff09"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "CN": {
+          "description": "\u641c\u7d22 TCE \u670d\u52a1 (CN)",
+          "http_request_metadata": {
+            "method": "GET",
+            "url": "https://cloud.bytedance.net/api/v1/tce/open-apis/v1/services/",
+            "querySchema": {
+              "type": "object",
+              "properties": {
+                "search": {
+                  "type": "string",
+                  "description": "\u641c\u7d22\u5173\u952e\u8bcd\uff08PSM \u6216\u670d\u52a1\u540d\uff09"
+                },
+                "repo_name": {
+                  "type": "string",
+                  "description": "\u4ed3\u5e93\u540d\u79f0"
+                },
+                "detail": {
+                  "type": "boolean",
+                  "description": "\u662f\u5426\u8fd4\u56de\u8be6\u7ec6\u4fe1\u606f",
+                  "default": true
+                },
+                "is_ppe": {
+                  "type": "boolean",
+                  "description": "\u662f\u5426\u4e3a PPE \u73af\u5883",
+                  "default": false
+                },
+                "page": {
+                  "type": "integer",
+                  "description": "\u9875\u7801",
+                  "default": 1
+                },
+                "page_size": {
+                  "type": "integer",
+                  "description": "\u6bcf\u9875\u6570\u91cf",
+                  "default": 10
+                },
+                "subs_prefer": {
+                  "type": "boolean",
+                  "description": "\u662f\u5426\u4f18\u5148\u5c55\u793a\u8ba2\u9605\u670d\u52a1",
+                  "default": true
+                }
+              },
+              "required": []
+            },
+            "headerSchema": {
+              "type": "object",
+              "properties": {
+                "x-bcgw-tenant-id": {
+                  "type": "string",
+                  "default": "bytedance",
+                  "description": "\u79df\u6237 ID"
+                },
+                "accept-language": {
+                  "type": "string",
+                  "default": "zh",
+                  "description": "\u8bed\u8a00"
+                },
+                "x-jwt-token": {
+                  "type": "string",
+                  "description": "JWT Token\uff08\u7528\u6237\u8eab\u4efd\u8ba4\u8bc1\uff09"
+                }
+              }
+            },
+            "outputSchema": {
+              "type": "object",
+              "properties": {
+                "page_info": {
+                  "type": "object",
+                  "description": "\u5206\u9875\u4fe1\u606f",
+                  "properties": {
+                    "total_count": {
+                      "type": "integer",
+                      "description": "\u603b\u6570\u91cf"
+                    },
+                    "page_num": {
+                      "type": "integer",
+                      "description": "\u5f53\u524d\u9875\u7801"
+                    },
+                    "page_size": {
+                      "type": "integer",
+                      "description": "\u6bcf\u9875\u6570\u91cf"
+                    }
+                  }
+                },
+                "data": {
+                  "type": "array",
+                  "description": "\u670d\u52a1\u5217\u8868",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "meta": {
+                        "type": "object",
+                        "description": "\u670d\u52a1\u5143\u4fe1\u606f\uff08id, psm, name, status, cluster_ids \u7b49\uff09"
+                      },
+                      "auth": {
+                        "type": "object",
+                        "description": "\u6743\u9650\u4fe1\u606f\uff08owner, iam_info, galaxy_info \u7b49\uff09"
+                      },
+                      "build": {
+                        "type": "object",
+                        "description": "\u6784\u5efa\u4fe1\u606f\uff08language, tech_stack, scm_repo_info \u7b49\uff09"
+                      },
+                      "runtime": {
+                        "type": "object",
+                        "description": "\u8fd0\u884c\u65f6\u4fe1\u606f\uff08ports, cluster_ids, latest_repo_info \u7b49\uff09"
+                      },
+                      "upgrade": {
+                        "type": "object",
+                        "description": "\u5347\u7ea7\u4fe1\u606f\uff08update_rely, upgrade_url\uff09"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "I18N-TT": {
+          "description": "\u641c\u7d22 TCE \u670d\u52a1 (I18N-TT)",
+          "http_request_metadata": {
+            "method": "GET",
+            "url": "https://bc-sg-gw.tiktok-row.net/api/v1/tce/open-apis/v1/services/",
+            "querySchema": {
+              "type": "object",
+              "properties": {
+                "search": {
+                  "type": "string",
+                  "description": "\u641c\u7d22\u5173\u952e\u8bcd\uff08PSM \u6216\u670d\u52a1\u540d\uff09"
+                },
+                "repo_name": {
+                  "type": "string",
+                  "description": "\u4ed3\u5e93\u540d\u79f0"
+                },
+                "detail": {
+                  "type": "boolean",
+                  "description": "\u662f\u5426\u8fd4\u56de\u8be6\u7ec6\u4fe1\u606f",
+                  "default": true
+                },
+                "is_ppe": {
+                  "type": "boolean",
+                  "description": "\u662f\u5426\u4e3a PPE \u73af\u5883",
+                  "default": false
+                },
+                "page": {
+                  "type": "integer",
+                  "description": "\u9875\u7801",
+                  "default": 1
+                },
+                "page_size": {
+                  "type": "integer",
+                  "description": "\u6bcf\u9875\u6570\u91cf",
+                  "default": 10
+                },
+                "subs_prefer": {
+                  "type": "boolean",
+                  "description": "\u662f\u5426\u4f18\u5148\u5c55\u793a\u8ba2\u9605\u670d\u52a1",
+                  "default": true
+                }
+              },
+              "required": []
+            },
+            "headerSchema": {
+              "type": "object",
+              "properties": {
+                "x-bcgw-tenant-id": {
+                  "type": "string",
+                  "default": "bytedance",
+                  "description": "\u79df\u6237 ID"
+                },
+                "accept-language": {
+                  "type": "string",
+                  "default": "zh",
+                  "description": "\u8bed\u8a00"
+                },
+                "x-jwt-token": {
+                  "type": "string",
+                  "description": "JWT Token\uff08\u7528\u6237\u8eab\u4efd\u8ba4\u8bc1\uff09"
+                }
+              }
+            },
+            "outputSchema": {
+              "type": "object",
+              "properties": {
+                "page_info": {
+                  "type": "object",
+                  "description": "\u5206\u9875\u4fe1\u606f",
+                  "properties": {
+                    "total_count": {
+                      "type": "integer",
+                      "description": "\u603b\u6570\u91cf"
+                    },
+                    "page_num": {
+                      "type": "integer",
+                      "description": "\u5f53\u524d\u9875\u7801"
+                    },
+                    "page_size": {
+                      "type": "integer",
+                      "description": "\u6bcf\u9875\u6570\u91cf"
+                    }
+                  }
+                },
+                "data": {
+                  "type": "array",
+                  "description": "\u670d\u52a1\u5217\u8868",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "meta": {
+                        "type": "object",
+                        "description": "\u670d\u52a1\u5143\u4fe1\u606f\uff08id, psm, name, status, cluster_ids \u7b49\uff09"
+                      },
+                      "auth": {
+                        "type": "object",
+                        "description": "\u6743\u9650\u4fe1\u606f\uff08owner, iam_info, galaxy_info \u7b49\uff09"
+                      },
+                      "build": {
+                        "type": "object",
+                        "description": "\u6784\u5efa\u4fe1\u606f\uff08language, tech_stack, scm_repo_info \u7b49\uff09"
+                      },
+                      "runtime": {
+                        "type": "object",
+                        "description": "\u8fd0\u884c\u65f6\u4fe1\u606f\uff08ports, cluster_ids, latest_repo_info \u7b49\uff09"
+                      },
+                      "upgrade": {
+                        "type": "object",
+                        "description": "\u5347\u7ea7\u4fe1\u606f\uff08update_rely, upgrade_url\uff09"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "GetService": {
+        "BOE": {
+          "description": "\u83b7\u53d6\u5355\u4e2a TCE \u670d\u52a1\u8be6\u60c5 (BOE)",
+          "http_request_metadata": {
+            "method": "GET",
+            "url": "https://cloud-boe.bytedance.net/api/v1/tce/open-apis/v1/services/{service_id}/",
+            "querySchema": {
+              "type": "object",
+              "properties": {
+                "service_id": {
+                  "type": "string",
+                  "description": "\u670d\u52a1 ID\uff08\u7528\u4e8e URL \u8def\u5f84\uff09"
+                }
+              },
+              "required": [
+                "service_id"
+              ]
+            },
+            "headerSchema": {
+              "type": "object",
+              "properties": {
+                "x-bcgw-tenant-id": {
+                  "type": "string",
+                  "default": "bytedance",
+                  "description": "\u79df\u6237 ID"
+                },
+                "accept-language": {
+                  "type": "string",
+                  "default": "zh",
+                  "description": "\u8bed\u8a00"
+                },
+                "x-jwt-token": {
+                  "type": "string",
+                  "description": "JWT Token\uff08\u7528\u6237\u8eab\u4efd\u8ba4\u8bc1\uff09"
+                }
+              }
+            },
+            "outputSchema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "meta": {
+                      "type": "object",
+                      "description": "\u670d\u52a1\u5143\u4fe1\u606f\uff08id, psm, name, status \u7b49\uff09"
+                    },
+                    "auth": {
+                      "type": "object",
+                      "description": "\u6743\u9650\u4fe1\u606f\uff08owner, iam_info \u7b49\uff09"
+                    },
+                    "build": {
+                      "type": "object",
+                      "description": "\u6784\u5efa\u4fe1\u606f\uff08language, tech_stack, scm_repo_info \u7b49\uff09"
+                    },
+                    "runtime": {
+                      "type": "object",
+                      "description": "\u8fd0\u884c\u65f6\u4fe1\u606f\uff08ports, cluster_ids, latest_repo_info \u7b49\uff09"
+                    },
+                    "upgrade": {
+                      "type": "object",
+                      "description": "\u5347\u7ea7\u4fe1\u606f\uff08update_rely, upgrade_url\uff09"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "CN": {
+          "description": "\u83b7\u53d6\u5355\u4e2a TCE \u670d\u52a1\u8be6\u60c5 (CN)",
+          "http_request_metadata": {
+            "method": "GET",
+            "url": "https://cloud.bytedance.net/api/v1/tce/open-apis/v1/services/{service_id}/",
+            "querySchema": {
+              "type": "object",
+              "properties": {
+                "service_id": {
+                  "type": "string",
+                  "description": "\u670d\u52a1 ID\uff08\u7528\u4e8e URL \u8def\u5f84\uff09"
+                }
+              },
+              "required": [
+                "service_id"
+              ]
+            },
+            "headerSchema": {
+              "type": "object",
+              "properties": {
+                "x-bcgw-tenant-id": {
+                  "type": "string",
+                  "default": "bytedance",
+                  "description": "\u79df\u6237 ID"
+                },
+                "accept-language": {
+                  "type": "string",
+                  "default": "zh",
+                  "description": "\u8bed\u8a00"
+                },
+                "x-jwt-token": {
+                  "type": "string",
+                  "description": "JWT Token\uff08\u7528\u6237\u8eab\u4efd\u8ba4\u8bc1\uff09"
+                }
+              }
+            },
+            "outputSchema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "meta": {
+                      "type": "object",
+                      "description": "\u670d\u52a1\u5143\u4fe1\u606f\uff08id, psm, name, status \u7b49\uff09"
+                    },
+                    "auth": {
+                      "type": "object",
+                      "description": "\u6743\u9650\u4fe1\u606f\uff08owner, iam_info \u7b49\uff09"
+                    },
+                    "build": {
+                      "type": "object",
+                      "description": "\u6784\u5efa\u4fe1\u606f\uff08language, tech_stack, scm_repo_info \u7b49\uff09"
+                    },
+                    "runtime": {
+                      "type": "object",
+                      "description": "\u8fd0\u884c\u65f6\u4fe1\u606f\uff08ports, cluster_ids, latest_repo_info \u7b49\uff09"
+                    },
+                    "upgrade": {
+                      "type": "object",
+                      "description": "\u5347\u7ea7\u4fe1\u606f\uff08update_rely, upgrade_url\uff09"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "I18N-TT": {
+          "description": "\u83b7\u53d6\u5355\u4e2a TCE \u670d\u52a1\u8be6\u60c5 (I18N-TT)",
+          "http_request_metadata": {
+            "method": "GET",
+            "url": "https://bc-sg-gw.tiktok-row.net/api/v1/tce/open-apis/v1/services/{service_id}/",
+            "querySchema": {
+              "type": "object",
+              "properties": {
+                "service_id": {
+                  "type": "string",
+                  "description": "\u670d\u52a1 ID\uff08\u7528\u4e8e URL \u8def\u5f84\uff09"
+                }
+              },
+              "required": [
+                "service_id"
+              ]
+            },
+            "headerSchema": {
+              "type": "object",
+              "properties": {
+                "x-bcgw-tenant-id": {
+                  "type": "string",
+                  "default": "bytedance",
+                  "description": "\u79df\u6237 ID"
+                },
+                "accept-language": {
+                  "type": "string",
+                  "default": "zh",
+                  "description": "\u8bed\u8a00"
+                },
+                "x-jwt-token": {
+                  "type": "string",
+                  "description": "JWT Token\uff08\u7528\u6237\u8eab\u4efd\u8ba4\u8bc1\uff09"
+                }
+              }
+            },
+            "outputSchema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "meta": {
+                      "type": "object",
+                      "description": "\u670d\u52a1\u5143\u4fe1\u606f\uff08id, psm, name, status \u7b49\uff09"
+                    },
+                    "auth": {
+                      "type": "object",
+                      "description": "\u6743\u9650\u4fe1\u606f\uff08owner, iam_info \u7b49\uff09"
+                    },
+                    "build": {
+                      "type": "object",
+                      "description": "\u6784\u5efa\u4fe1\u606f\uff08language, tech_stack, scm_repo_info \u7b49\uff09"
+                    },
+                    "runtime": {
+                      "type": "object",
+                      "description": "\u8fd0\u884c\u65f6\u4fe1\u606f\uff08ports, cluster_ids, latest_repo_info \u7b49\uff09"
+                    },
+                    "upgrade": {
+                      "type": "object",
+                      "description": "\u5347\u7ea7\u4fe1\u606f\uff08update_rely, upgrade_url\uff09"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "GetDeploymentTicket": {
+        "BOE": {
+          "description": "\u67e5\u8be2\u90e8\u7f72\u5de5\u5355\u8be6\u60c5 (BOE)",
+          "http_request_metadata": {
+            "method": "GET",
+            "url": "https://cloud-boe.bytedance.net/api/v1/tce/open-apis/v2/deployment/{ticket_id}/",
+            "querySchema": {
+              "type": "object",
+              "properties": {
+                "ticket_id": {
+                  "type": "string",
+                  "description": "\u90e8\u7f72\u5de5\u5355 ID\uff08\u7528\u4e8e URL \u8def\u5f84\uff09"
+                },
+                "steps": {
+                  "type": "string",
+                  "description": "\u6b65\u9aa4\u8fc7\u6ee4\uff08\u7559\u7a7a\u8fd4\u56de\u5168\u90e8\uff09",
+                  "default": ""
+                },
+                "use_pods_list": {
+                  "type": "boolean",
+                  "description": "\u662f\u5426\u8fd4\u56de Pod \u5217\u8868",
+                  "default": true
+                }
+              },
+              "required": [
+                "ticket_id"
+              ]
+            },
+            "headerSchema": {
+              "type": "object",
+              "properties": {
+                "x-bcgw-tenant-id": {
+                  "type": "string",
+                  "default": "bytedance",
+                  "description": "\u79df\u6237 ID"
+                },
+                "accept-language": {
+                  "type": "string",
+                  "default": "zh",
+                  "description": "\u8bed\u8a00"
+                },
+                "x-jwt-token": {
+                  "type": "string",
+                  "description": "JWT Token\uff08\u7528\u6237\u8eab\u4efd\u8ba4\u8bc1\uff09"
+                }
+              }
+            },
+            "outputSchema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "meta": {
+                      "type": "object",
+                      "description": "\u5de5\u5355\u5143\u4fe1\u606f\uff08id, deployment_type, status, psm, create_time, finish_time \u7b49\uff09"
+                    },
+                    "pipeline": {
+                      "type": "object",
+                      "description": "\u6d41\u6c34\u7ebf\u4fe1\u606f\uff08stages, allow_actions \u7b49\uff09",
+                      "properties": {
+                        "stages": {
+                          "type": "array",
+                          "description": "\u6d41\u6c34\u7ebf\u9636\u6bb5\u5217\u8868",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "name": {
+                                "type": "string",
+                                "description": "\u9636\u6bb5\u540d\u79f0"
+                              },
+                              "status": {
+                                "type": "string",
+                                "description": "\u9636\u6bb5\u72b6\u6001"
+                              },
+                              "steps": {
+                                "type": "array",
+                                "description": "\u9636\u6bb5\u6b65\u9aa4\u5217\u8868"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "runtime": {
+                      "type": "object",
+                      "description": "\u8fd0\u884c\u65f6\u4fe1\u606f\uff08cluster_list, diff_info \u7b49\uff09"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "CN": {
+          "description": "\u67e5\u8be2\u90e8\u7f72\u5de5\u5355\u8be6\u60c5 (CN)",
+          "http_request_metadata": {
+            "method": "GET",
+            "url": "https://cloud.bytedance.net/api/v1/tce/open-apis/v2/deployment/{ticket_id}/",
+            "querySchema": {
+              "type": "object",
+              "properties": {
+                "ticket_id": {
+                  "type": "string",
+                  "description": "\u90e8\u7f72\u5de5\u5355 ID\uff08\u7528\u4e8e URL \u8def\u5f84\uff09"
+                },
+                "steps": {
+                  "type": "string",
+                  "description": "\u6b65\u9aa4\u8fc7\u6ee4\uff08\u7559\u7a7a\u8fd4\u56de\u5168\u90e8\uff09",
+                  "default": ""
+                },
+                "use_pods_list": {
+                  "type": "boolean",
+                  "description": "\u662f\u5426\u8fd4\u56de Pod \u5217\u8868",
+                  "default": true
+                }
+              },
+              "required": [
+                "ticket_id"
+              ]
+            },
+            "headerSchema": {
+              "type": "object",
+              "properties": {
+                "x-bcgw-tenant-id": {
+                  "type": "string",
+                  "default": "bytedance",
+                  "description": "\u79df\u6237 ID"
+                },
+                "accept-language": {
+                  "type": "string",
+                  "default": "zh",
+                  "description": "\u8bed\u8a00"
+                },
+                "x-jwt-token": {
+                  "type": "string",
+                  "description": "JWT Token\uff08\u7528\u6237\u8eab\u4efd\u8ba4\u8bc1\uff09"
+                }
+              }
+            },
+            "outputSchema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "meta": {
+                      "type": "object",
+                      "description": "\u5de5\u5355\u5143\u4fe1\u606f\uff08id, deployment_type, status, psm, create_time, finish_time \u7b49\uff09"
+                    },
+                    "pipeline": {
+                      "type": "object",
+                      "description": "\u6d41\u6c34\u7ebf\u4fe1\u606f\uff08stages, allow_actions \u7b49\uff09",
+                      "properties": {
+                        "stages": {
+                          "type": "array",
+                          "description": "\u6d41\u6c34\u7ebf\u9636\u6bb5\u5217\u8868",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "name": {
+                                "type": "string",
+                                "description": "\u9636\u6bb5\u540d\u79f0"
+                              },
+                              "status": {
+                                "type": "string",
+                                "description": "\u9636\u6bb5\u72b6\u6001"
+                              },
+                              "steps": {
+                                "type": "array",
+                                "description": "\u9636\u6bb5\u6b65\u9aa4\u5217\u8868"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "runtime": {
+                      "type": "object",
+                      "description": "\u8fd0\u884c\u65f6\u4fe1\u606f\uff08cluster_list, diff_info \u7b49\uff09"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "I18N-TT": {
+          "description": "\u67e5\u8be2\u90e8\u7f72\u5de5\u5355\u8be6\u60c5 (I18N-TT)",
+          "http_request_metadata": {
+            "method": "GET",
+            "url": "https://bc-sg-gw.tiktok-row.net/api/v1/tce/open-apis/v2/deployment/{ticket_id}/",
+            "querySchema": {
+              "type": "object",
+              "properties": {
+                "ticket_id": {
+                  "type": "string",
+                  "description": "\u90e8\u7f72\u5de5\u5355 ID\uff08\u7528\u4e8e URL \u8def\u5f84\uff09"
+                },
+                "steps": {
+                  "type": "string",
+                  "description": "\u6b65\u9aa4\u8fc7\u6ee4\uff08\u7559\u7a7a\u8fd4\u56de\u5168\u90e8\uff09",
+                  "default": ""
+                },
+                "use_pods_list": {
+                  "type": "boolean",
+                  "description": "\u662f\u5426\u8fd4\u56de Pod \u5217\u8868",
+                  "default": true
+                }
+              },
+              "required": [
+                "ticket_id"
+              ]
+            },
+            "headerSchema": {
+              "type": "object",
+              "properties": {
+                "x-bcgw-tenant-id": {
+                  "type": "string",
+                  "default": "bytedance",
+                  "description": "\u79df\u6237 ID"
+                },
+                "accept-language": {
+                  "type": "string",
+                  "default": "zh",
+                  "description": "\u8bed\u8a00"
+                },
+                "x-jwt-token": {
+                  "type": "string",
+                  "description": "JWT Token\uff08\u7528\u6237\u8eab\u4efd\u8ba4\u8bc1\uff09"
+                }
+              }
+            },
+            "outputSchema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "meta": {
+                      "type": "object",
+                      "description": "\u5de5\u5355\u5143\u4fe1\u606f\uff08id, deployment_type, status, psm, create_time, finish_time \u7b49\uff09"
+                    },
+                    "pipeline": {
+                      "type": "object",
+                      "description": "\u6d41\u6c34\u7ebf\u4fe1\u606f\uff08stages, allow_actions \u7b49\uff09",
+                      "properties": {
+                        "stages": {
+                          "type": "array",
+                          "description": "\u6d41\u6c34\u7ebf\u9636\u6bb5\u5217\u8868",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "name": {
+                                "type": "string",
+                                "description": "\u9636\u6bb5\u540d\u79f0"
+                              },
+                              "status": {
+                                "type": "string",
+                                "description": "\u9636\u6bb5\u72b6\u6001"
+                              },
+                              "steps": {
+                                "type": "array",
+                                "description": "\u9636\u6bb5\u6b65\u9aa4\u5217\u8868"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "runtime": {
+                      "type": "object",
+                      "description": "\u8fd0\u884c\u65f6\u4fe1\u606f\uff08cluster_list, diff_info \u7b49\uff09"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "ListClusters": {
+        "BOE": {
+          "description": "\u83b7\u53d6\u670d\u52a1\u96c6\u7fa4\u5217\u8868\uff08\u5347\u7ea7\u573a\u666f\uff09(BOE)",
+          "http_request_metadata": {
+            "method": "GET",
+            "url": "https://cloud-boe.bytedance.net/api/v1/tce/open-apis/v1/services/{service_id}/clusters/",
+            "querySchema": {
+              "type": "object",
+              "properties": {
+                "service_id": {
+                  "type": "string",
+                  "description": "\u670d\u52a1 ID\uff08\u7528\u4e8e URL \u8def\u5f84\uff09"
+                },
+                "include_upstream": {
+                  "type": "boolean",
+                  "description": "\u662f\u5426\u5305\u542b\u4e0a\u6e38\u4fe1\u606f",
+                  "default": true
+                },
+                "no_dp_metrics": {
+                  "type": "boolean",
+                  "description": "\u662f\u5426\u4e0d\u8fd4\u56de DP \u6307\u6807",
+                  "default": true
+                },
+                "no_pagination": {
+                  "type": "boolean",
+                  "description": "\u662f\u5426\u5173\u95ed\u5206\u9875\u5e76\u8fd4\u56de\u5168\u91cf",
+                  "default": true
+                }
+              },
+              "required": [
+                "service_id"
+              ]
+            },
+            "headerSchema": {
+              "type": "object",
+              "properties": {
+                "x-bcgw-tenant-id": {
+                  "type": "string",
+                  "default": "bytedance",
+                  "description": "\u79df\u6237 ID"
+                },
+                "accept-language": {
+                  "type": "string",
+                  "default": "zh",
+                  "description": "\u8bed\u8a00"
+                },
+                "x-jwt-token": {
+                  "type": "string",
+                  "description": "JWT Token\uff08\u7528\u6237\u8eab\u4efd\u8ba4\u8bc1\uff09"
+                }
+              }
+            },
+            "outputSchema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "description": "\u96c6\u7fa4\u5217\u8868\uff08\u6bcf\u9879\u5305\u542b meta/resource/runtime/upgrade \u7b49\u4fe1\u606f\uff09"
+                }
+              }
+            }
+          }
+        },
+        "CN": {
+          "description": "\u83b7\u53d6\u670d\u52a1\u96c6\u7fa4\u5217\u8868\uff08\u5347\u7ea7\u573a\u666f\uff09(CN)",
+          "http_request_metadata": {
+            "method": "GET",
+            "url": "https://cloud.bytedance.net/api/v1/tce/open-apis/v1/services/{service_id}/clusters/",
+            "querySchema": {
+              "type": "object",
+              "properties": {
+                "service_id": {
+                  "type": "string",
+                  "description": "\u670d\u52a1 ID\uff08\u7528\u4e8e URL \u8def\u5f84\uff09"
+                },
+                "include_upstream": {
+                  "type": "boolean",
+                  "description": "\u662f\u5426\u5305\u542b\u4e0a\u6e38\u4fe1\u606f",
+                  "default": true
+                },
+                "no_dp_metrics": {
+                  "type": "boolean",
+                  "description": "\u662f\u5426\u4e0d\u8fd4\u56de DP \u6307\u6807",
+                  "default": true
+                },
+                "no_pagination": {
+                  "type": "boolean",
+                  "description": "\u662f\u5426\u5173\u95ed\u5206\u9875\u5e76\u8fd4\u56de\u5168\u91cf",
+                  "default": true
+                }
+              },
+              "required": [
+                "service_id"
+              ]
+            },
+            "headerSchema": {
+              "type": "object",
+              "properties": {
+                "x-bcgw-tenant-id": {
+                  "type": "string",
+                  "default": "bytedance",
+                  "description": "\u79df\u6237 ID"
+                },
+                "accept-language": {
+                  "type": "string",
+                  "default": "zh",
+                  "description": "\u8bed\u8a00"
+                },
+                "x-jwt-token": {
+                  "type": "string",
+                  "description": "JWT Token\uff08\u7528\u6237\u8eab\u4efd\u8ba4\u8bc1\uff09"
+                }
+              }
+            },
+            "outputSchema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "description": "\u96c6\u7fa4\u5217\u8868\uff08\u6bcf\u9879\u5305\u542b meta/resource/runtime/upgrade \u7b49\u4fe1\u606f\uff09"
+                }
+              }
+            }
+          }
+        },
+        "I18N-TT": {
+          "description": "\u83b7\u53d6\u670d\u52a1\u96c6\u7fa4\u5217\u8868\uff08\u5347\u7ea7\u573a\u666f\uff09(I18N-TT)",
+          "http_request_metadata": {
+            "method": "GET",
+            "url": "https://bc-sg-gw.tiktok-row.net/api/v1/tce/open-apis/v1/services/{service_id}/clusters/",
+            "querySchema": {
+              "type": "object",
+              "properties": {
+                "service_id": {
+                  "type": "string",
+                  "description": "\u670d\u52a1 ID\uff08\u7528\u4e8e URL \u8def\u5f84\uff09"
+                },
+                "include_upstream": {
+                  "type": "boolean",
+                  "description": "\u662f\u5426\u5305\u542b\u4e0a\u6e38\u4fe1\u606f",
+                  "default": true
+                },
+                "no_dp_metrics": {
+                  "type": "boolean",
+                  "description": "\u662f\u5426\u4e0d\u8fd4\u56de DP \u6307\u6807",
+                  "default": true
+                },
+                "no_pagination": {
+                  "type": "boolean",
+                  "description": "\u662f\u5426\u5173\u95ed\u5206\u9875\u5e76\u8fd4\u56de\u5168\u91cf",
+                  "default": true
+                }
+              },
+              "required": [
+                "service_id"
+              ]
+            },
+            "headerSchema": {
+              "type": "object",
+              "properties": {
+                "x-bcgw-tenant-id": {
+                  "type": "string",
+                  "default": "bytedance",
+                  "description": "\u79df\u6237 ID"
+                },
+                "accept-language": {
+                  "type": "string",
+                  "default": "zh",
+                  "description": "\u8bed\u8a00"
+                },
+                "x-jwt-token": {
+                  "type": "string",
+                  "description": "JWT Token\uff08\u7528\u6237\u8eab\u4efd\u8ba4\u8bc1\uff09"
+                }
+              }
+            },
+            "outputSchema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "description": "\u96c6\u7fa4\u5217\u8868\uff08\u6bcf\u9879\u5305\u542b meta/resource/runtime/upgrade \u7b49\u4fe1\u606f\uff09"
+                }
+              }
+            }
+          }
+        }
+      },
+      "GetRepoInfoList": {
+        "BOE": {
+          "description": "\u83b7\u53d6\u670d\u52a1\u4ed3\u5e93\u7248\u672c\u4fe1\u606f\u5217\u8868\uff08\u5347\u7ea7\u573a\u666f\uff09(BOE)",
+          "http_request_metadata": {
+            "method": "GET",
+            "url": "https://cloud-boe.bytedance.net/api/v1/tce/open-apis/v1/services/{service_id}/repo_info_list/",
+            "querySchema": {
+              "type": "object",
+              "properties": {
+                "service_id": {
+                  "type": "string",
+                  "description": "\u670d\u52a1 ID\uff08\u7528\u4e8e URL \u8def\u5f84\uff09"
+                }
+              },
+              "required": [
+                "service_id"
+              ]
+            },
+            "headerSchema": {
+              "type": "object",
+              "properties": {
+                "x-bcgw-tenant-id": {
+                  "type": "string",
+                  "default": "bytedance",
+                  "description": "\u79df\u6237 ID"
+                },
+                "accept-language": {
+                  "type": "string",
+                  "default": "zh",
+                  "description": "\u8bed\u8a00"
+                },
+                "x-jwt-token": {
+                  "type": "string",
+                  "description": "JWT Token\uff08\u7528\u6237\u8eab\u4efd\u8ba4\u8bc1\uff09"
+                }
+              }
+            },
+            "outputSchema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "description": "\u4ed3\u5e93\u5217\u8868",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "repo_id": {
+                        "type": "integer",
+                        "description": "\u4ed3\u5e93 ID"
+                      },
+                      "repo_name": {
+                        "type": "string",
+                        "description": "\u4ed3\u5e93\u540d\u79f0"
+                      },
+                      "versions": {
+                        "type": "array",
+                        "description": "\u7248\u672c\u5217\u8868"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "CN": {
+          "description": "\u83b7\u53d6\u670d\u52a1\u4ed3\u5e93\u7248\u672c\u4fe1\u606f\u5217\u8868\uff08\u5347\u7ea7\u573a\u666f\uff09(CN)",
+          "http_request_metadata": {
+            "method": "GET",
+            "url": "https://cloud.bytedance.net/api/v1/tce/open-apis/v1/services/{service_id}/repo_info_list/",
+            "querySchema": {
+              "type": "object",
+              "properties": {
+                "service_id": {
+                  "type": "string",
+                  "description": "\u670d\u52a1 ID\uff08\u7528\u4e8e URL \u8def\u5f84\uff09"
+                }
+              },
+              "required": [
+                "service_id"
+              ]
+            },
+            "headerSchema": {
+              "type": "object",
+              "properties": {
+                "x-bcgw-tenant-id": {
+                  "type": "string",
+                  "default": "bytedance",
+                  "description": "\u79df\u6237 ID"
+                },
+                "accept-language": {
+                  "type": "string",
+                  "default": "zh",
+                  "description": "\u8bed\u8a00"
+                },
+                "x-jwt-token": {
+                  "type": "string",
+                  "description": "JWT Token\uff08\u7528\u6237\u8eab\u4efd\u8ba4\u8bc1\uff09"
+                }
+              }
+            },
+            "outputSchema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "description": "\u4ed3\u5e93\u5217\u8868",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "repo_id": {
+                        "type": "integer",
+                        "description": "\u4ed3\u5e93 ID"
+                      },
+                      "repo_name": {
+                        "type": "string",
+                        "description": "\u4ed3\u5e93\u540d\u79f0"
+                      },
+                      "versions": {
+                        "type": "array",
+                        "description": "\u7248\u672c\u5217\u8868"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "I18N-TT": {
+          "description": "\u83b7\u53d6\u670d\u52a1\u4ed3\u5e93\u7248\u672c\u4fe1\u606f\u5217\u8868\uff08\u5347\u7ea7\u573a\u666f\uff09(I18N-TT)",
+          "http_request_metadata": {
+            "method": "GET",
+            "url": "https://bc-sg-gw.tiktok-row.net/api/v1/tce/open-apis/v1/services/{service_id}/repo_info_list/",
+            "querySchema": {
+              "type": "object",
+              "properties": {
+                "service_id": {
+                  "type": "string",
+                  "description": "\u670d\u52a1 ID\uff08\u7528\u4e8e URL \u8def\u5f84\uff09"
+                }
+              },
+              "required": [
+                "service_id"
+              ]
+            },
+            "headerSchema": {
+              "type": "object",
+              "properties": {
+                "x-bcgw-tenant-id": {
+                  "type": "string",
+                  "default": "bytedance",
+                  "description": "\u79df\u6237 ID"
+                },
+                "accept-language": {
+                  "type": "string",
+                  "default": "zh",
+                  "description": "\u8bed\u8a00"
+                },
+                "x-jwt-token": {
+                  "type": "string",
+                  "description": "JWT Token\uff08\u7528\u6237\u8eab\u4efd\u8ba4\u8bc1\uff09"
+                }
+              }
+            },
+            "outputSchema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "description": "\u4ed3\u5e93\u5217\u8868",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "repo_id": {
+                        "type": "integer",
+                        "description": "\u4ed3\u5e93 ID"
+                      },
+                      "repo_name": {
+                        "type": "string",
+                        "description": "\u4ed3\u5e93\u540d\u79f0"
+                      },
+                      "versions": {
+                        "type": "array",
+                        "description": "\u7248\u672c\u5217\u8868"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "CreateUpgradeTicket": {
+        "BOE": {
+          "description": "\u521b\u5efa\u670d\u52a1\u5347\u7ea7\u5de5\u5355 (BOE)",
+          "http_request_metadata": {
+            "method": "POST",
+            "url": "https://cloud-boe.bytedance.net/api/v1/tce/open-apis/v1/deployment/cluster/upgrade/",
+            "bodySchema": {
+              "type": "object",
+              "properties": {
+                "cluster_info": {
+                  "type": "object",
+                  "description": "\u96c6\u7fa4\u4fe1\u606f\u5bf9\u8c61\uff0c\u9700\u5305\u542b runtime.repo_info",
+                  "example": {
+                    "runtime": {
+                      "repo_info": [
+                        {
+                          "name": "code_forge/pipeline/api",
+                          "version": "1.0.0.676",
+                          "description": "merge description",
+                          "scm_repo_id": "452040"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "cluster_list": {
+                  "type": "array",
+                  "description": "\u76ee\u6807\u96c6\u7fa4\u5217\u8868\uff0c\u793a\u4f8b: [{\"id\": 201473163, \"rollout_strategy\": \"eager\"}]"
+                },
+                "pipeline_template": {
+                  "type": "integer",
+                  "description": "\u6d41\u6c34\u7ebf\u6a21\u677f ID",
+                  "default": 1
+                },
+                "service": {
+                  "type": "integer",
+                  "description": "\u670d\u52a1 ID"
+                },
+                "step_built_in": {
+                  "type": "boolean",
+                  "description": "\u662f\u5426\u4f7f\u7528\u5185\u7f6e\u6b65\u9aa4",
+                  "default": false
+                }
+              },
+              "required": [
+                "cluster_info",
+                "cluster_list",
+                "service"
+              ]
+            },
+            "headerSchema": {
+              "type": "object",
+              "properties": {
+                "x-bcgw-tenant-id": {
+                  "type": "string",
+                  "default": "bytedance",
+                  "description": "\u79df\u6237 ID"
+                },
+                "accept-language": {
+                  "type": "string",
+                  "default": "zh",
+                  "description": "\u8bed\u8a00"
+                },
+                "content-type": {
+                  "type": "string",
+                  "default": "application/json",
+                  "description": "\u8bf7\u6c42\u5185\u5bb9\u7c7b\u578b"
+                },
+                "x-jwt-token": {
+                  "type": "string",
+                  "description": "JWT Token\uff08\u7528\u6237\u8eab\u4efd\u8ba4\u8bc1\uff09"
+                }
+              }
+            },
+            "outputSchema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "description": "\u5de5\u5355 ID"
+                    },
+                    "pipeline_id": {
+                      "type": "integer",
+                      "description": "\u6d41\u6c34\u7ebf ID"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "\u5de5\u5355\u72b6\u6001"
+                    },
+                    "create_time": {
+                      "type": "string",
+                      "description": "\u521b\u5efa\u65f6\u95f4"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "CN": {
+          "description": "\u521b\u5efa\u670d\u52a1\u5347\u7ea7\u5de5\u5355 (CN)",
+          "http_request_metadata": {
+            "method": "POST",
+            "url": "https://cloud.bytedance.net/api/v1/tce/open-apis/v1/deployment/cluster/upgrade/",
+            "bodySchema": {
+              "type": "object",
+              "properties": {
+                "cluster_info": {
+                  "type": "object",
+                  "description": "\u96c6\u7fa4\u4fe1\u606f\u5bf9\u8c61\uff0c\u9700\u5305\u542b runtime.repo_info"
+                },
+                "cluster_list": {
+                  "type": "array",
+                  "description": "\u76ee\u6807\u96c6\u7fa4\u5217\u8868\uff0c\u793a\u4f8b: [{\"id\": 201473163, \"rollout_strategy\": \"eager\"}]"
+                },
+                "pipeline_template": {
+                  "type": "integer",
+                  "description": "\u6d41\u6c34\u7ebf\u6a21\u677f ID",
+                  "default": 1
+                },
+                "service": {
+                  "type": "integer",
+                  "description": "\u670d\u52a1 ID"
+                },
+                "step_built_in": {
+                  "type": "boolean",
+                  "description": "\u662f\u5426\u4f7f\u7528\u5185\u7f6e\u6b65\u9aa4",
+                  "default": false
+                }
+              },
+              "required": [
+                "cluster_info",
+                "cluster_list",
+                "service"
+              ]
+            },
+            "headerSchema": {
+              "type": "object",
+              "properties": {
+                "x-bcgw-tenant-id": {
+                  "type": "string",
+                  "default": "bytedance",
+                  "description": "\u79df\u6237 ID"
+                },
+                "accept-language": {
+                  "type": "string",
+                  "default": "zh",
+                  "description": "\u8bed\u8a00"
+                },
+                "content-type": {
+                  "type": "string",
+                  "default": "application/json",
+                  "description": "\u8bf7\u6c42\u5185\u5bb9\u7c7b\u578b"
+                },
+                "x-jwt-token": {
+                  "type": "string",
+                  "description": "JWT Token\uff08\u7528\u6237\u8eab\u4efd\u8ba4\u8bc1\uff09"
+                }
+              }
+            },
+            "outputSchema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "description": "\u5de5\u5355 ID"
+                    },
+                    "pipeline_id": {
+                      "type": "integer",
+                      "description": "\u6d41\u6c34\u7ebf ID"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "\u5de5\u5355\u72b6\u6001"
+                    },
+                    "create_time": {
+                      "type": "string",
+                      "description": "\u521b\u5efa\u65f6\u95f4"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "I18N-TT": {
+          "description": "\u521b\u5efa\u670d\u52a1\u5347\u7ea7\u5de5\u5355 (I18N-TT)",
+          "http_request_metadata": {
+            "method": "POST",
+            "url": "https://bc-sg-gw.tiktok-row.net/api/v1/tce/open-apis/v1/deployment/cluster/upgrade/",
+            "bodySchema": {
+              "type": "object",
+              "properties": {
+                "cluster_info": {
+                  "type": "object",
+                  "description": "\u96c6\u7fa4\u4fe1\u606f\u5bf9\u8c61\uff0c\u9700\u5305\u542b runtime.repo_info"
+                },
+                "cluster_list": {
+                  "type": "array",
+                  "description": "\u76ee\u6807\u96c6\u7fa4\u5217\u8868\uff0c\u793a\u4f8b: [{\"id\": 201473163, \"rollout_strategy\": \"eager\"}]"
+                },
+                "pipeline_template": {
+                  "type": "integer",
+                  "description": "\u6d41\u6c34\u7ebf\u6a21\u677f ID",
+                  "default": 1
+                },
+                "service": {
+                  "type": "integer",
+                  "description": "\u670d\u52a1 ID"
+                },
+                "step_built_in": {
+                  "type": "boolean",
+                  "description": "\u662f\u5426\u4f7f\u7528\u5185\u7f6e\u6b65\u9aa4",
+                  "default": false
+                }
+              },
+              "required": [
+                "cluster_info",
+                "cluster_list",
+                "service"
+              ]
+            },
+            "headerSchema": {
+              "type": "object",
+              "properties": {
+                "x-bcgw-tenant-id": {
+                  "type": "string",
+                  "default": "bytedance",
+                  "description": "\u79df\u6237 ID"
+                },
+                "accept-language": {
+                  "type": "string",
+                  "default": "zh",
+                  "description": "\u8bed\u8a00"
+                },
+                "content-type": {
+                  "type": "string",
+                  "default": "application/json",
+                  "description": "\u8bf7\u6c42\u5185\u5bb9\u7c7b\u578b"
+                },
+                "x-jwt-token": {
+                  "type": "string",
+                  "description": "JWT Token\uff08\u7528\u6237\u8eab\u4efd\u8ba4\u8bc1\uff09"
+                }
+              }
+            },
+            "outputSchema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer",
+                      "description": "\u5de5\u5355 ID"
+                    },
+                    "pipeline_id": {
+                      "type": "integer",
+                      "description": "\u6d41\u6c34\u7ebf ID"
+                    },
+                    "status": {
+                      "type": "string",
+                      "description": "\u5de5\u5355\u72b6\u6001"
+                    },
+                    "create_time": {
+                      "type": "string",
+                      "description": "\u521b\u5efa\u65f6\u95f4"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
