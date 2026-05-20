@@ -1,0 +1,619 @@
+{
+  "version": "",
+  "updated_at": "2026-05-19T20:13:46.027398+08:00",
+  "skills": {
+    "abase": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "aeolus": {
+      "files": [
+        "SKILL.md",
+        "references/dashboard.md",
+        "references/dataset.md",
+        "references/expression_functions.md",
+        "references/query_editor.md"
+      ]
+    },
+    "anycache-knowledge": {
+      "files": [
+        "SKILL.md",
+        "anycache-usage.md"
+      ]
+    },
+    "argos-alarm": {
+      "files": [
+        "SKILL.md",
+        "references/lark-notification.md"
+      ]
+    },
+    "argos-dashboard": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "argos-query": {
+      "files": [
+        "SKILL.md",
+        "SKILL_reference.md"
+      ]
+    },
+    "bam-api": {
+      "files": [
+        "SKILL.md",
+        "references/cli-recipes.md",
+        "references/output-contracts.md",
+        "references/publish-prep.md"
+      ]
+    },
+    "bam-query": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "base-workflow": {
+      "files": [
+        "SKILL.md",
+        "phase-examples.md",
+        "skills-reference.md",
+        "status-schema.md"
+      ]
+    },
+    "bits-dev-workflow": {
+      "files": [
+        "SKILL.md",
+        "phase-examples.md",
+        "skills-reference.md",
+        "status-schema.md"
+      ]
+    },
+    "bits-devops": {
+      "files": [
+        "SKILL.md",
+        "SKILL_dev_task.md",
+        "SKILL_mr.md",
+        "SKILL_release_ticket.md",
+        "SKILL_space_tools.md",
+        "SKILL_tcc_config.md",
+        "SKILL_workflows.md"
+      ]
+    },
+    "bpm": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "bytecloud-doc": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "byteconf-knowledge": {
+      "files": [
+        "SKILL.md",
+        "byteconf-sdk-usage.md"
+      ]
+    },
+    "bytedoc-query": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "bytedtrace-knowledge": {
+      "files": [
+        "SKILL.md",
+        "framework-integration.md",
+        "references/metrics-schema.md",
+        "sdk-usage.md"
+      ]
+    },
+    "bytees": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "bytefaas": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "bytest-case": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "bytetim-knowledge": {
+      "files": [
+        "SKILL.md",
+        "bytetim-http-integration.md",
+        "bytetim-kitex-integration.md",
+        "bytetim-python-sdk.md",
+        "bytetim-sdk-usage.md"
+      ]
+    },
+    "codebase": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "confx-knowledge": {
+      "files": [
+        "SKILL.md",
+        "advanced-features.md",
+        "config-sources.md",
+        "dynamic-config.md",
+        "quick-start.md"
+      ]
+    },
+    "coral": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "decc-desrpc": {
+      "files": [
+        "SKILL.md",
+        "references/des-tagging-spec.md",
+        "references/errors.md",
+        "references/output-schemas.md"
+      ]
+    },
+    "des-mq": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "devflow": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "diag": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "dolphin-knowledge": {
+      "files": [
+        "SKILL.md",
+        "dolphin-sdk-disaster-recovery.md",
+        "dolphin-sdk-lane.md",
+        "dolphin-sdk-usage.md"
+      ]
+    },
+    "dorado": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "edit-idl": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "ems": {
+      "files": [
+        "SKILL.md",
+        "references/entities.md",
+        "references/rds_deployment.md",
+        "references/schema_change.md",
+        "references/storages.md",
+        "references/sync_channels.md",
+        "references/workflows.md"
+      ]
+    },
+    "env": {
+      "files": [
+        "SKILL.md",
+        "references/action-reference.md",
+        "references/deploy-examples.md",
+        "references/output-format.md",
+        "references/vregion-reference.md"
+      ]
+    },
+    "eventbus": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "find-skill": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "fornax-knowledge": {
+      "files": [
+        "SKILL.md",
+        "fornax-observability.md",
+        "fornax-openapi.md",
+        "fornax-sdk-usage.md"
+      ]
+    },
+    "frontier-knowledge": {
+      "files": [
+        "SKILL.md",
+        "frontier-sdk-usage.md"
+      ]
+    },
+    "gdp-knowledge": {
+      "files": [
+        "SKILL.md",
+        "code-layers/action-examples.md",
+        "code-layers/dal-examples.md",
+        "code-layers/dao-examples.md",
+        "code-layers/domain-examples.md",
+        "commands/init-command.md",
+        "commands/lint-command.md",
+        "commands/update-command.md",
+        "components/compkg.md",
+        "components/config.md",
+        "components/log.md",
+        "components/metrics.md",
+        "components/plugin-middleware.md",
+        "components/testing.md",
+        "guide/code-layers-guide.md",
+        "guide/guide.md",
+        "guide/workflow-guide.md",
+        "ral/abase_redis.md",
+        "ral/database.md",
+        "ral/eventbus.md",
+        "ral/overview.md",
+        "ral/rpc.md",
+        "ral/testing.md"
+      ]
+    },
+    "gdpa-cli": {
+      "files": [
+        "SKILL.md",
+        "install.sh"
+      ]
+    },
+    "hertz-knowledge": {
+      "files": [
+        "SKILL.md",
+        "advanced-idl-annotations.md",
+        "best-practices.md",
+        "bind-and-validate-request.md",
+        "configure-protocols.md",
+        "configure-server.md",
+        "create-first-service.md",
+        "define-idl-annotations.md",
+        "generate-code-example.md",
+        "generate-code-with-hertztool.md",
+        "implement-handlers.md",
+        "install-and-setup.md",
+        "manage-routes.md",
+        "request-api.md",
+        "request-context.md",
+        "response-api.md",
+        "understanding-request-context.md",
+        "using-http-client.md",
+        "using-middleware.md",
+        "what-is-hertz.md"
+      ]
+    },
+    "iam": {
+      "files": [
+        "SKILL.md",
+        "references/groups.md",
+        "references/my-roles.md",
+        "references/permission-apply.md",
+        "references/tickets.md"
+      ]
+    },
+    "imagex-knowledge": {
+      "files": [
+        "SKILL.md",
+        "api-categories.md",
+        "error-handling.md",
+        "sdk-usage-guide.md"
+      ]
+    },
+    "integration-testing-knowledge": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "kitex-knowledge": {
+      "files": [
+        "SKILL.md",
+        "best-practices.md",
+        "common-issues-faq.md",
+        "configure-loadbalance.md",
+        "configure-retry.md",
+        "configure-service.md",
+        "configure-timeout.md",
+        "create-first-service.md",
+        "define-thrift-idl.md",
+        "error-codes.md",
+        "error-handling-guide.md",
+        "generate-code-from-idl.md",
+        "get-response-in-middleware.md",
+        "handle-errors.md",
+        "implement-custom-loadbalancer.md",
+        "implement-custom-resolver.md",
+        "install-and-setup.md",
+        "key-concepts.md",
+        "quick-start.md",
+        "startup-configuration.md",
+        "tune-connection-pool.md",
+        "using-call-options.md",
+        "using-generic-call.md",
+        "using-middleware.md",
+        "using-streaming.md",
+        "what-is-kitex.md"
+      ]
+    },
+    "kms-knowledge": {
+      "files": [
+        "SKILL.md",
+        "kms-platform-guide.md",
+        "kms-sdk-usage.md"
+      ]
+    },
+    "learning-capture": {
+      "files": [
+        "SKILL.md",
+        "references/convention-example.md",
+        "references/task-example.md",
+        "references/terminology-example.md"
+      ]
+    },
+    "libra": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "libra-knowledge": {
+      "files": [
+        "SKILL.md",
+        "abtest-sdk-usage.md",
+        "libra-config-space.md"
+      ]
+    },
+    "md3c-knowledge": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "meego-manage": {
+      "files": [
+        "SKILL.md",
+        "references/create.md",
+        "references/get.md",
+        "references/subtask.md",
+        "references/update.md",
+        "references/workflow.md"
+      ]
+    },
+    "metrics": {
+      "files": [
+        "SKILL.md",
+        "SKILL_reference.md"
+      ]
+    },
+    "metrics-knowledge": {
+      "files": [
+        "SKILL.md",
+        "metrics-query-guide.md",
+        "metrics-sdk-overview.md",
+        "metrics-v4-guide.md"
+      ]
+    },
+    "metricx-knowledge": {
+      "files": [
+        "SKILL.md",
+        "advanced-options.md",
+        "best-practices.md",
+        "field-tags.md",
+        "metric-types.md",
+        "quick-start.md"
+      ]
+    },
+    "monorepo-knowledge": {
+      "files": [
+        "SKILL.md",
+        "monorepo-bazel-build.md",
+        "monorepo-ci-cd.md",
+        "monorepo-cli.md",
+        "monorepo-local-dev.md",
+        "monorepo-unit-test.md"
+      ]
+    },
+    "neptune-acl": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "neptune-stability": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "overpass": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "overpass-knowledge": {
+      "files": [
+        "SKILL.md",
+        "overpass-client-configuration.md",
+        "overpass-common-structs.md",
+        "overpass-concepts.md",
+        "overpass-go-usage.md",
+        "overpass-introduction.md",
+        "overpass-platform-operations.md",
+        "overpass-quickstart.md",
+        "overpass-troubleshooting.md"
+      ]
+    },
+    "post-coding-verify": {
+      "files": [
+        "SKILL.md",
+        "phase-examples.md",
+        "skills-reference.md",
+        "status-schema.md"
+      ]
+    },
+    "psm-info": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "ral-knowledge": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "rds": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "redis": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "refactor-review-knowledge": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "repo2psm": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "repotalk": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "rtc-knowledge": {
+      "files": [
+        "SKILL.md",
+        "rtc-openapi-usage.md"
+      ]
+    },
+    "scm": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "starling": {
+      "files": [
+        "SKILL.md",
+        "testdata/fake-starling.sh"
+      ]
+    },
+    "storage-knowledge": {
+      "files": [
+        "ByteES.md",
+        "ByteKV.md",
+        "RocketMQ.md",
+        "SKILL.md",
+        "VikingDB.md",
+        "abase.md",
+        "bmq.md",
+        "bytedoc.md",
+        "bytegraph.md",
+        "eventbus.md",
+        "rds.md",
+        "redis.md",
+        "tos.md"
+      ]
+    },
+    "streamlog-knowledge": {
+      "files": [
+        "SKILL.md",
+        "streamlog-sdk-usage.md"
+      ]
+    },
+    "tcc-deploy": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "tcc-knowledge": {
+      "files": [
+        "SKILL.md",
+        "tcc-usage.md"
+      ]
+    },
+    "tcc-query": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "tce": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "tea-query": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "testing-knowledge": {
+      "files": [
+        "SKILL.md",
+        "mockey-usage.md"
+      ]
+    },
+    "tiktok-event-center": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "tiktok-guidelines-knowledge": {
+      "files": [
+        "SKILL.md",
+        "api-design-guidelines.md",
+        "api-workflow.md",
+        "bytecheck-rules.md",
+        "comment-guidelines.md",
+        "control-structures.md",
+        "formatting-guide.md",
+        "function-design.md",
+        "initialization-guide.md",
+        "interface-checking.md",
+        "naming-conventions.md",
+        "tools-best-practices.md"
+      ]
+    },
+    "tos": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "trace-query": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "udecc-og": {
+      "files": [
+        "SKILL.md",
+        "references/errors.md",
+        "references/output-schemas.md",
+        "references/tagging-spec.md"
+      ]
+    },
+    "user-jwt": {
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "workflow-builder": {
+      "files": [
+        "SKILL.md",
+        "examples.md",
+        "generation-templates.md"
+      ]
+    }
+  }
+}
